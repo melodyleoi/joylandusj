@@ -1,27 +1,42 @@
-*{
+/* 重置基础样式 */
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+html, body {
+    height: 100%; /* 修改内容：确保页面高度撑满 */
+    margin: 0;
+    display: flex; /* 修改内容：启用 flex 布局 */
+    flex-direction: column; /* 修改内容：使页面内容从上到下排列 */
+}
+
+body {
     width: 100vw;
     background-color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-nav{
+
+.container {
+    flex: 1; /* 确保内容区域撑满剩余空间 */
+}
+
+/* Navbar 样式 */
+nav {
     background-color: white;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
-nav ul{
+nav ul {
     width: 100%;
     list-style: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-nav li{
+nav li {
     height: 50px;
 }
-nav a{
+nav a {
     height: 100%;
     padding: 0 30px;
     text-decoration: none;
@@ -29,13 +44,15 @@ nav a{
     align-items: center;
     color: black;
 }
-nav a:hover{
+nav a:hover {
     background-color: #f0f0f0;
 }
-nav li:first-child{
+nav li:first-child {
     margin-right: auto;
 }
-.sidebar{
+
+/* Sidebar 样式 */
+.sidebar {
     position: fixed;
     top: 0;
     right: 0;
@@ -50,25 +67,179 @@ nav li:first-child{
     align-items: flex-start;
     justify-content: flex-start;
 }
-.sidebar li{
+.sidebar li {
     width: 100%;
 }
-.sidebar a{
+.sidebar a {
     width: 100%;
 }
-.menu-button{
-    display: none;
+
+/* Footer 样式（新增部分） */
+.footer {
+    background-color: #f8f9fa; /* 修改内容：设置 footer 背景颜色 */
+    color: #004080; /* 文字颜色 */
+    padding: 40px 20px;
+    /* border-top: 1px solid #ddd; 修改内容：增加顶部边框 */
+    /* margin-top: auto; 修改内容：将 footer 推到页面底部 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-@media(max-width: 800px){
-    .hideOnMobile{
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.footer-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.footer-form button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-form button:hover {
+    background-color: #0056b3;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #004080;
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-column p,
+.footer-column ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-bottom a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
+
+/* .footer-nav li {
+    display: inline-block;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #007bff; /* 修改内容：设置链接颜色
+} */
+
+
+
+/* Mobile 样式调整 */
+@media(max-width: 800px) {
+    .hideOnMobile {
         display: none;
     }
-    .menu-button{
+    .menu-button {
         display: block;
     }
 }
-@media(max-width: 400px){
-    .hideOnMobile{
+
+@media(max-width: 400px) {
+    .hideOnMobile {
         width: 100%;
     }
 }
